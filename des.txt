@@ -1,0 +1,13 @@
+from pyDes import des, ECB, PAD_PKCS5
+
+key = b"8bytekey"
+
+cipher = des(key, ECB, padmode=PAD_PKCS5)
+
+message = input("Enter String: ")
+
+encrypted = cipher.encrypt(message)
+print("Encrypted Message:", encrypted.hex())
+
+decrypted = cipher.decrypt(encrypted).decode()
+print("Decrypted Message:", decrypted)
