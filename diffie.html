@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>DIFFIE-HELLMAN</title>
+    <h1>DIFFIE-HELLMAN</h1>
+</head>
+<body>
+    <script>
+        function power(a,b,p){
+            return Math.pow(a,b) % p;
+        }
+
+        var P = 11;
+        var G = 7;
+
+        var a = 4;
+        var b = 3;
+
+        var x = power(G,a,P);
+        var y = power(G,b,P);
+
+        var sa = power(y,a,P);
+        var sb = power(x,b,P);
+
+        document.write("public key of alice"+x+"</br>");
+        document.write("public key of bob"+y+"</br>");
+        document.write("private key of alice"+a+"</br>");
+        document.write("private key of bob"+b+"</br>");
+        document.write("shared secret key of alice "+sa+"</br>");
+        document.write("shared secret key of bob "+sb+"</br>");
+        document.write("shared secret key of both "+sb+"</br>");
+    </script>
+
+
+    
+</body>
+</html>
